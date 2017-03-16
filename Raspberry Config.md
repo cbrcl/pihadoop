@@ -46,12 +46,14 @@ sudo cp /etc/network/interfaces /etc/network/interfaces.backup
 sudo nano /etc/network/interfaces
 
 # Modificar linea de wlan0
+```
 allow-hotplug wlan0
 iface wlan0 inet static
     address 192.168.0.X
     netmask 255.255.255.0
     gateway 192.168.0.1
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+```
 
 # Levantar WIFI
 sudo ifup wlan0

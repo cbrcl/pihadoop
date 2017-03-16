@@ -12,12 +12,12 @@ sudo dd bs=1m if=2017-03-02-raspbian-jessie-lite.img of=/dev/rdisk2
 
 ## Habilitar SSH creando un archivo "ssh" en la raiz del la tarjeta SD
 https://www.raspberrypi.org/documentation/remote-access/ssh/README.md
-ENABLE SSH ON A HEADLESS RASPBERRY PI
+>ENABLE SSH ON A HEADLESS RASPBERRY PI
 For headless setup, SSH can be enabled by placing a file named 'ssh', without any extension, onto the boot partition of the SD card. When the Pi boots, it looks for the 'ssh' file. If it is found, SSH is enabled, and the file is deleted. The content of the file does not matter: it could contain text, or nothing at all.
 
 
 Conectar por cable para configurar IP del raspberry
- Regenerar llave ssh para conectarse a una IP previamente utilizada con otra maquina
+Regenerar llave ssh para conectarse a una IP previamente utilizada con otra maquina
 ```
 ssh-keygen -R 192.168.0.X
 ```

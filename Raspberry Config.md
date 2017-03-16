@@ -32,9 +32,8 @@ sudo raspi-config
 sudo shutdown -r now
 ```
 
-## Configurar WIFI via command line
+## Configurar WIFI via command line como usuario root
 https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
-Cambiar a root para realizar cambios
 ```
 sudo su
 wpa_passphrase "WIFI_NAME" "WIFI_PASSWORD" >> /etc/wpa_supplicant/wpa_supplicant.conf
@@ -60,7 +59,7 @@ sudo cp /etc/network/interfaces /etc/network/interfaces.backup
 sudo nano /etc/network/interfaces
 ```
 
-### Modificar linea de wlan0
+#### Modificar linea de wlan0
 ```
 allow-hotplug wlan0
 iface wlan0 inet static

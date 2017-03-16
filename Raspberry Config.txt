@@ -20,7 +20,7 @@ sudo dd bs=1m if=2017-03-02-raspbian-jessie-lite.img of=/dev/rdisk2
 ssh-keygen -R 192.168.0.X
 
 # Cambiar nombre de la maquina, contraseña por defecto del usuario pi y expandir filesystem
-sudo raspi-config  
+sudo raspi-config
 
 # Reiniciar
 sudo shutdown -r now

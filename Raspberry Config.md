@@ -40,10 +40,13 @@ sudo wpa_cli reconfigure
 ## Salir del modo root
 exit
 
+
+```
 ## Configurar STATIC WIFI IP
 ## https://kerneldriver.wordpress.com/2012/10/21/configuring-wpa2-using-wpa_supplicant-on-the-raspberry-pi/
 sudo cp /etc/network/interfaces /etc/network/interfaces.backup
 sudo nano /etc/network/interfaces
+```
 
 ## Modificar linea de wlan0
 ```

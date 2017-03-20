@@ -32,6 +32,16 @@ sudo raspi-config
 sudo shutdown -r now
 ```
 
+## Instalaciones varias: python, zip, unzip
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3-pip
+sudo apt-get install zip unzip
+sudo apt-get install oracle-java7-jdk
+```
+
+
 ## Configurar WIFI via command line como usuario root
 https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
 ```
@@ -46,10 +56,13 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 Aplicar los cambios WIFI y salir del modo root
 ```
+sudo ifdown wlan0
+sudo ifup wlan0
 sudo wpa_cli reconfigure
-
 exit
 ```
+
+
 
 
 ## Configurar STATIC WIFI IP
@@ -71,6 +84,7 @@ iface wlan0 inet static
 
 ## Levantar WIFI
 ```
+sudo ifdown wlan0
 sudo ifup wlan0
 ```
 
@@ -81,14 +95,4 @@ sudo nano /etc/hosts
 
 192.168.0.X RASPBERRY1
 192.168.0.Y RASPBERRY2
-```
-
-
-## Instalaciones varias: python, zip, unzip
-```
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install python3-pip
-sudo apt-get install zip unzip
-sudo apt-get install oracle-java8-jdk
 ```

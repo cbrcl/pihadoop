@@ -13,14 +13,14 @@ sudo apt-get install git
 cd ~
 rm -r -f pihadoop
 git clone https://github.com/cbrcl/pihadoop
-chmod +x pihadoop/etc-hadoop/*.sh
+chmod +x pihadoop/config/*.sh
 
 #Ejecutar la actualizacion de paquetes
-pihadoop/etc-hadoop/raspberry-update.sh 
+pihadoop/config/01-raspberry-update.sh
 
 #Ejecutar la creacion del usuario/grupo para hadoop
-pihadoop/etc-hadoop/raspberry-cluster-hadoop.sh 
+pihadoop/config/raspberry-hadoop-user.sh 
 
 #Ejecutar la creacion  y configuracion de las carpetas que usara hadoop
-pihadoop/etc-hadoop/raspberry-hadoop-folders.sh 
+pihadoop/config/raspberry-hadoop-folders.sh
 ```

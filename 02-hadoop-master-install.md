@@ -1,15 +1,24 @@
-## Creacion de usuario y grupo hadoop
+## 1. Creacion de usuario y grupo hadoop
+>ver config/02-raspberry-hadoop-user.sh
 
+
+## 2. Linkear otros equipos con nombres cortos
+Agregar IP
 ```
-sudo addgroup hadoop
-sudo adduser --ingroup hadoop hduser
-sudo adduser hduser sudo
+sudo cp /etc/hosts /etc/hosts.backup
+sudo nano /etc/hosts
+```
+Asi es como deberia quedar
+```
+127.0.0.1       localhost
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
 
-su hduser
-sudo mkdir /hdfs
-sudo mkdir /hdfs/tmp
-sudo chown -R hduser:hadoop /hdfs/tmp
-sudo chmod 750 /hdfs/tmp
+127.0.1.1     hdmaster
+192.168.0.200   hdmaster
+192.168.0.201   hdnode1
+192.168.0.202   hdnode2
 ```
 
 https://tekmarathon.com/2017/02/15/hadoop-and-spark-installation-on-raspberry-pi-3-cluster-part-2/
@@ -38,19 +47,6 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-```
-
-
-
-## Configurar acceso a los slaves sin password
-
-```
-su hduser  
-ssh-keygen  
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys  
-chmod 0600 ~/.ssh/authorized_keys  
-ssh-copy-id hduser@legoc-3 (Repeat for each slave node)  
-ssh hduser@legoc-3
 ```
 
 

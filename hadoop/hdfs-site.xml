@@ -12,30 +12,13 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License. See accompanying LICENSE file.
-
-  HELLO
-
 -->
 
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-    <property>
-        <name>dfs.namenode.name.dir</name>
-        <value>/opt/hadoop_tmp/hdfs/namenode</value>
-        <final>true</final>
-    </property>
-    <property>
-        <name>dfs.datanode.data.dir</name>
-        <value>/opt/hadoop_tmp/hdfs/datanode</value>
-        <final>true</final>
-    </property>
-	<property>
-        <name>dfs.namenode.http-address</name>
-        <value>hdmaster:50070</value>
-    </property>
-    <property>
+<property>
         <name>dfs.replication</name>
-        <value>2</value>
-    </property>
+        <value>1</value>
+</property>
 </configuration>

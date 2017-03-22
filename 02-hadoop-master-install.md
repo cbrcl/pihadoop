@@ -114,13 +114,13 @@ hadoop fs -copyToLocal /license-out.txt ~/
 
 ## Chequear Estado
 ```
-cp /opt/hadoop-2.7.3/logs/blank.log /opt/hadoop-2.7.3/logs/hadoop-hduser-namenode-hdmaster.log
-cp /opt/hadoop-2.7.3/logs/blank.log /opt/hadoop-2.7.3/logs/hadoop-hduser-datanode-hdnode2.log
+cp $HADOOP_HOME/logs/blank.log $HADOOP_HOME/logs/hadoop-hduser-namenode-hdmaster.log
+cp $HADOOP_HOME/logs/blank.log $HADOOP_HOME/logs/hadoop-hduser-datanode-hdnode2.log
 
-tail -100 /opt/hadoop-2.7.3/logs/hadoop-hduser-namenode-hdmaster.log
+tail -100 $HADOOP_HOME/logs/hadoop-hduser-namenode-hdmaster.log
 
-tail -100 /opt/hadoop-2.7.3/logs/hadoop-hduser-datanode-hdnode1.log
-tail -100 /opt/hadoop-2.7.3/logs/hadoop-hduser-datanode-hdnode2.log
+tail -100 $HADOOP_HOME/logs/hadoop-hduser-datanode-hdnode1.log
+tail -100 $HADOOP_HOME/logs/hadoop-hduser-datanode-hdnode2.log
 
 more /opt/hadoop_tmp/hdfs/namenode/current/VERSION
 nano /opt/hadoop_tmp/hdfs/namenode/current/VERSION

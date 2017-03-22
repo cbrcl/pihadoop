@@ -51,112 +51,16 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 
 ### core-site.xml
-```
-sudo nano /opt/hadoop-2.7.3/etc/hadoop/hdfs-site.xml
+>ver hadoop/core-site.xml
 
-<property>
-        <name>dfs.replication</name>
-        <value>1</value>
-</property>
-sudo nano /opt/hadoop-2.7.3/etc/hadoop/core-site.xml
+### hdfs-site.xml
+>ver hadoop/hdfs-site.xml
 
-<property>
-        <name>fs.default.name</name>
-        <value>hdfs://hdmaster:54310</value>
-</property>
-<property>
-        <name>hadoop.tmp.dir</name>
-        <value>/hdfs/tmp</value>
-</property>
+### mapred-site.xml
+>ver hadoop/mapred-site.xml
 
-cp /opt/hadoop-2.7.3/etc/hadoop/mapred-site.xml.template /opt/hadoop-2.7.3/etc/hadoop/mapred-site.xml
-sudo nano /opt/hadoop-2.7.3/etc/hadoop/mapred-site.xml
-
-<property>
-  <name>mapreduce.framework.name</name>
-  <value>yarn</value>
-</property>
-<property>
-  <name>mapreduce.map.memory.mb</name>
-  <value>256</value>
-</property>
-<property>
-  <name>mapreduce.map.java.opts</name>
-  <value>-Xmx204m</value>
-</property>
-<property>
-  <name>mapreduce.reduce.memory.mb</name>
-  <value>102</value>
-</property>
-<property>
-  <name>mapreduce.reduce.java.opts</name>
-  <value>-Xmx102m</value>
-</property>
-<property>
-  <name>yarn.app.mapreduce.am.resource.mb</name>
-  <value>128</value>
-</property>
-<property>
-  <name>yarn.app.mapreduce.am.command-opts</name>
-  <value>-Xmx102m</value>
-</property>
-
-
-sudo nano /opt/hadoop-2.7.3/etc/hadoop/yarn-site.xml
-
-<property>
-        <name>yarn.resourcemanager.resource-tracker.address</name>
-        <value>hdmaster:8025</value>
-</property>
-<property>
-        <name>yarn.resourcemanager.scheduler.address</name>
-        <value>hdmaster:8030</value>
-</property>
-<property>
-        <name>yarn.resourcemanager.address</name>
-        <value>hdmaster:8050</value>
-</property>
-<property>
-        <name>yarn.nodemanager.aux-services</name>
-        <value>mapreduce_shuffle</value>
-</property>
-<property>
-        <name>yarn.nodemanager.resource.cpu-vcores</name>
-        <value>4</value>
-</property>
-<property>
-        <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>1024</value>
-</property>
-<property>
-        <name>yarn.scheduler.minimum-allocation-mb</name>
-        <value>128</value>
-</property>
-<property>
-        <name>yarn.scheduler.maximum-allocation-mb</name>
-        <value>1024</value>
-</property>
-<property>
-        <name>yarn.scheduler.minimum-allocation-vcores</name>
-        <value>1</value>
-</property>
-<property>
-        <name>yarn.scheduler.maximum-allocation-vcores</name>
-        <value>4</value>
-</property>
-<property>
-        <name>yarn.nodemanager.vmem-check-enabled</name>
-        <value>false</value>
-</property>
-<property>
-        <name>yarn.nodemanager.pmem-check-enabled</name>
-        <value>true</value>
-</property>
-<property>
-        <name>yarn.nodemanager.vmem-pmem-ratio</name>
-        <value>4</value>
-</property>
-```
+### yarn-site.xml
+>ver hadoop/yarn-site.xml
 
 ```
 sudo shutdown -r now
@@ -166,6 +70,16 @@ sudo shutdown -r now
 hdfs namenode -format
 ```
 
+### Configurar archivos master y slaves
+Este paso se debe hacer antes despues de configurar los esclavos
+
+```
+nano $HADOOP_HOME/etc/hadoop/master
+
+nano $HADOOP_HOME/etc/hadoop/slaves
+```
+
+
 ## STARTING HADOOP
 El orden es primero el dfs y luego el yarn
 ```
@@ -174,7 +88,6 @@ start-yarn.sh
 
 hdfs dfsadmin -report
 ```
-
 
 
 ## STOPPING HADOOP
@@ -193,13 +106,14 @@ hadoop fs -ls /
 
 ## correr ejercicio
 https://blogs.sap.com/2015/04/25/a-hadoop-data-lab-project-on-raspberry-pi-part-14/
+```
 hadoop fs -copyFromLocal /opt/hadoop-2.7.3/LICENSE.txt /license.txt
 hadoop jar /opt/hadoop-2.7.3/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar wordcount /license.txt /license-out.txt
 hadoop fs -copyToLocal /license-out.txt ~/
-
+```
 
 ## Chequear Estado
-
+```
 cp /opt/hadoop-2.7.3/logs/blank.log /opt/hadoop-2.7.3/logs/hadoop-hduser-namenode-hdmaster.log
 cp /opt/hadoop-2.7.3/logs/blank.log /opt/hadoop-2.7.3/logs/hadoop-hduser-datanode-hdnode2.log
 
@@ -215,16 +129,4 @@ more /opt/hadoop_tmp/hdfs/datanode/current/VERSION
 nano /opt/hadoop_tmp/hdfs/datanode/current/VERSION
 
 clusterID=CID-f81f8cb8-175c-49b3-9709-5a05a42d3d7c
-
-
-```
-hdfs namenode -format
-
-hdfs dfsadmin -report
-
-ssh hduser@hdnode1
-ssh hduser@hdnode2
-
-cd $HADOOP_CONF_DIR
-nano mapred-site.xml
 ```

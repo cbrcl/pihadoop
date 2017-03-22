@@ -19,8 +19,11 @@ chmod +x pihadoop/config/*.sh
 pihadoop/config/01-raspberry-update.sh
 
 #Ejecutar la creacion del usuario/grupo para hadoop
-pihadoop/config/raspberry-hadoop-user.sh 
+pihadoop/config/raspberry-hadoop-user.sh
 
 #Ejecutar la creacion  y configuracion de las carpetas que usara hadoop
-pihadoop/config/raspberry-hadoop-folders.sh
+pihadoop/config/03-raspberry-hadoop-folders.sh
+
+#Arrancar hdfs
+pihadoop/config/hadoop-start.sh
 ```

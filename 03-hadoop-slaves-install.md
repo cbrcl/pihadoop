@@ -36,7 +36,7 @@ sudo unzip hadoop-2.7.3-hdmaster.zip -d /
 sudo chown -R hduser:hadoop /opt/hadoop-2.7.3/
 rm hadoop-2.7.3-hdmaster.zip
 exit
-scp .bashrc hduser@hdnode1.local:~/.bashrc
+scp .bashrc hduser@hdnode1:~/.bashrc
 
 
 

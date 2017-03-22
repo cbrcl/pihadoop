@@ -6,8 +6,11 @@ El objetivo de este proyecto es dejar documentado cada uno de los pasos necesari
 
 ## Copiar este repositorio
 ```
+#instalar git
+sudo apt-get install git
+
+#eliminar version antigua de pihadoop
 cd ~
-sudo apt-get install git 
 rm -r -f pihadoop
 git clone https://github.com/cbrcl/pihadoop
 chmod +x pihadoop/etc-hadoop/*.sh

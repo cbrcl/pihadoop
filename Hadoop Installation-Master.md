@@ -9,6 +9,7 @@ su hduser
 sudo mkdir /hdfs
 sudo mkdir /hdfs/tmp
 sudo chown -R hduser:hadoop /hdfs/tmp
+sudo chmod 750 /hdfs/tmp
 ```
 
 https://tekmarathon.com/2017/02/15/hadoop-and-spark-installation-on-raspberry-pi-3-cluster-part-2/
@@ -186,6 +187,20 @@ El orden es primero el yarn y luego el dfs
 stop-yarn.sh  
 stop-dfs.sh  
 ```
+
+## Comandos hdfs
+http://hadoop.apache.org/docs/r2.7.0/hadoop-project-dist/hadoop-common/FileSystemShell.html#ls
+hadoop fs -mkdir hdfs://hdmaster:54310/testdir/
+hadoop fs -mkdir /testdir2
+hadoop fs -ls /
+
+
+## correr ejercicio
+https://blogs.sap.com/2015/04/25/a-hadoop-data-lab-project-on-raspberry-pi-part-14/
+hadoop fs -copyFromLocal /opt/hadoop-2.7.3/LICENSE.txt /license.txt
+hadoop jar /opt/hadoop-2.7.3/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar wordcount /license.txt /license-out.txt
+hadoop fs -copyToLocal /license-out.txt ~/
+
 
 ## Chequear Estado
 

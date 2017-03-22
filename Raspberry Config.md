@@ -60,6 +60,7 @@ sudo ifdown wlan0
 sudo ifup wlan0
 sudo wpa_cli reconfigure
 exit
+ifconfig wlan0
 ```
 
 
@@ -95,4 +96,9 @@ sudo nano /etc/hosts
 
 192.168.0.X RASPBERRY1
 192.168.0.Y RASPBERRY2
+```
+
+
+```
+sudo dd if=/dev/disk2 of=~/raspberry/raspberrypi_base.dmg
 ```

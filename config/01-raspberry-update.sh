@@ -7,3 +7,4 @@ sudo apt-get install git
 sudo apt-get install python-pip
 sudo pip install findspark
 sudo apt-get install oracle-java8-jdk
+sudo pip install setuptools

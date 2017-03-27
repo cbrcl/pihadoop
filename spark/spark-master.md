@@ -5,8 +5,6 @@ cd $SPARK_HOME
 ./sbin/start-all.sh
 ./bin/pyspark
 
-
-
 zip -r spark-2.1.0-hdmaster.zip /opt/spark-2.1.0-bin-hadoop2.7/
 scp spark-2.1.0-hdmaster.zip hduser@hdnode1:~
 scp spark-2.1.0-hdmaster.zip hduser@hdnode2:~
@@ -18,10 +16,7 @@ sudo chown -R hduser:hadoop /opt/spark-2.1.0-bin-hadoop2.7
 scp /opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh hdnode1:/opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh
 scp /opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh hdnode2:/opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh
 
-
-
 sed 's/rootCategory=INFO/rootCategory=WARN/'
-
 
 sudo python -m pip install --upgrade --force setuptools
 sudo python -m pip install --upgrade --force pip

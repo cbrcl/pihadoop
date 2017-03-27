@@ -30,14 +30,15 @@ sudo tar -xvzf hadoop-2.7.3.tar.gz -C /opt/
 cd /opt
 sudo chown -R hduser:hadoop hadoop-2.7.3/
 sudo nano /opt/hadoop-2.7.3/etc/hadoop/hadoop-env.sh
-export JAVA_HOME=/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre
+
+export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/jre
 ```
 
 ```
 sudo nano ~/.bashrc
 
 
-export JAVA_HOME=/usr/lib/jvm/jdk-7-oracle-arm-vfp-hflt/jre
+export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/jre
 export HADOOP_HOME=/opt/hadoop-2.7.3
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_COMMON_HOME=$HADOOP_HOME
@@ -47,6 +48,10 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+
+
+source ~/.bashrc
 ```
 
 
@@ -130,3 +135,9 @@ nano /opt/hadoop_tmp/hdfs/datanode/current/VERSION
 
 clusterID=CID-f81f8cb8-175c-49b3-9709-5a05a42d3d7c
 ```
+
+
+##SPARK
+export PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
+
+/home/hduser/license.txt

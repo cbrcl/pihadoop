@@ -12,6 +12,12 @@ scp spark-2.1.0-hdmaster.zip hduser@hdnode2:~
 sudo unzip spark-2.1.0-hdmaster.zip -d /
 sudo chown -R hduser:hadoop /opt/spark-2.1.0-bin-hadoop2.7
 
+nano /opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh
+
+SPARK_MASTER_IP=192.168.0.190
+SPARK_WORKER_MEMORY=768m
+SPARK_LOCAL_IP=192.168.0.XXX
+PYSPARK_PYTHON=/usr/bin/python
 
 scp /opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh hdnode1:/opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh
 scp /opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh hdnode2:/opt/spark-2.1.0-bin-hadoop2.7/conf/spark-env.sh

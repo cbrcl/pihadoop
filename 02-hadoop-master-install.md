@@ -50,6 +50,9 @@ export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 
+export PYSPARK_PYTHON=/usr/bin/python
+export PYSPARK_DRIVER_PYTHON=python
+
 
 source ~/.bashrc
 ```

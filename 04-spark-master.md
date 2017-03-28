@@ -81,7 +81,10 @@ spark-submit --master yarn --conf spark.executor.memory=640m pi-spark.py
 
 #SUCCEED
 spark-submit --master spark://hdmaster:7077 --conf spark.executor.memory=768m pi-spark.py 20
+```
 
+## Pruebas no exitosas :(
+```
 spark-submit --master yarn --conf spark.executor.memory=640m --deploy-mode cluster pi-spark.py
 
 spark-submit --master yarn --deploy-mode cluster pi-spark.py

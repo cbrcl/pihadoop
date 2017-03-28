@@ -59,16 +59,16 @@ source ~/.bashrc
 
 
 ### core-site.xml
->ver hadoop/core-site.xml
+>ver [hadoop-files/core-site.xml](hadoop-files/core-site.xml)
 
 ### hdfs-site.xml
->ver hadoop/hdfs-site.xml
+>ver [hadoop-files/hdfs-site.xml](hadoop-files/hdfs-site.xml)
 
 ### mapred-site.xml
->ver hadoop/mapred-site.xml
+>ver [hadoop-files/mapred-site.xml](hadoop-files/mapred-site.xml)
 
 ### yarn-site.xml
->ver hadoop/yarn-site.xml
+>ver [hadoop-files/yarn-site.xml](hadoop-files/yarn-site.xml)
 
 ```
 sudo shutdown -r now

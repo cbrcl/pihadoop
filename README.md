@@ -6,6 +6,8 @@ El objetivo de este proyecto es dejar documentado cada uno de los pasos necesari
 
 ![alt tag](img/cluster-raspberry.jpg)
 
+<img src="img/cluster-raspberry.jpg" width="350"/>
+
 
 ## Copiar este repositorio
 ```

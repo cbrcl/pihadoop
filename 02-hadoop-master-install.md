@@ -49,25 +49,28 @@ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
+export SPARK_HOME=/opt/spark-2.1.0-bin-hadoop2.7
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/python
 
-export PYSPARK_PYTHON=/usr/bin/python
-export PYSPARK_DRIVER_PYTHON=python
+export PYTHONPATH=/opt/spark-2.1.0-bin-hadoop2.7/python:/opt/spark-2.1.0-bin-hadoop2.7/python/lib/py4j-0.10.4-src.zip:/home/hduser:/usr/lib/python2.7:/usr/lib/python2.7/plat-arm-li$
+
+export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
 
 
 source ~/.bashrc
 ```
 
 
-### core-site.xml
+### nano $HADOOP_HOME/etc/hadoop/core-site.xml
 >ver [hadoop-files/core-site.xml](hadoop-files/core-site.xml)
 
-### hdfs-site.xml
+### nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 >ver [hadoop-files/hdfs-site.xml](hadoop-files/hdfs-site.xml)
 
-### mapred-site.xml
+### nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
 >ver [hadoop-files/mapred-site.xml](hadoop-files/mapred-site.xml)
 
-### yarn-site.xml
+### nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
 >ver [hadoop-files/yarn-site.xml](hadoop-files/yarn-site.xml)
 
 ```

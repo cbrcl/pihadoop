@@ -25,7 +25,7 @@ pihadoop/config/02-raspberry-hadoop-user.sh
 pihadoop/config/03-raspberry-hadoop-folders.sh
 ```
 #configurar hadoop
-> ver 02-hadoop-master-install.md (02-hadoop-master-install.md)
+> ver [02-hadoop-master-install.md](02-hadoop-master-install.md)
 
 ```
 #Ejecutar la ejemplo wordcount
